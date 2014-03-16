@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Гостевая книга</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="./js/functions.js"></script>
+		<link rel="stylesheet" href="./style/style.css" type="text/css">
+	</head>
+	<body>
+		<div id="content">
+			<h1>Гостевая книга</h1>
+			<div id="input-data">
+				<div>Имя:</div>
+				<input type="text" name="name">
+				<div>Пароль:</div>
+				<input type="password" name="password">
+				<div>Сообщение:</div>
+				<textarea></textarea>
+				<input type="button" name="send-message" value="Отправить сообщение">
+			</div>
+			<div id="messages">
+				<div class="message" hidden>
+					<div class="author-data"></div>
+					<div class="message-id" hidden></div>
+					<span></span>
+					<img class="image-delete" src="./images/delete.gif">
+					<img class="image-edit" src="./images/edit.gif">
+					<div class="edit-message change">
+						<textarea class="message-for-edit"></textarea>
+						Пароль: <input type="password">
+						<input type="button" value="Ok">
+					</div>
+					<div class="delete-message change">
+						Пароль: <input type="password">
+						<input type="button" value="Ok">
+					</div>						
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<table id="pagination">
+				<tbody>
+					<tr>
+						<td class="pagination-number" hidden>
+							<a href="#"><span>1</span></a>
+						</td>						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>	
+</html>

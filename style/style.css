@@ -1,0 +1,44 @@
+h1 {
+	text-align: center;
+}
+
+#content, #input-data, #messages {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#input-data, #messages {
+	width: 200px;
+}
+
+#messages {
+	margin-top: 20px;
+}
+
+.message {
+	border: 1px solid;
+	margin-top: 3px;
+}
+
+.message img {
+	display: none;
+}
+
+.message:hover img {
+	display: block;
+	float: right
+}
+
+.author-data {
+	border-bottom: 1px solid;
+	background-color: #ccc;
+}
+
+.edit-message, .delete-message {
+	display: none;
+	border-top: 1px solid;
+}
+
+#pagination {
+	margin: 0 auto;
+}

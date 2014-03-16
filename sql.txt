@@ -1,0 +1,94 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.6
+-- http://www.phpmyadmin.net
+--
+-- Хост: 127.0.0.1
+-- Время создания: Мар 16 2014 г., 14:00
+-- Версия сервера: 5.6.16
+-- Версия PHP: 5.5.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- База данных: `testnew`
+--
+CREATE DATABASE IF NOT EXISTS `testnew` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `testnew`;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `message` varchar(128) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=73 ;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `id_user`, `message`, `date`) VALUES
+(51, 4, '1', '2014-03-16'),
+(52, 4, '2', '2014-03-16'),
+(53, 4, '3', '2014-03-16'),
+(54, 4, '4', '2014-03-16'),
+(55, 4, '5', '2014-03-16'),
+(56, 4, '6', '2014-03-16'),
+(57, 4, '7', '2014-03-16'),
+(58, 4, '8', '2014-03-16'),
+(59, 4, '9', '2014-03-16'),
+(60, 4, '10', '2014-03-16'),
+(61, 4, '11', '2014-03-16'),
+(62, 4, '12', '2014-03-16'),
+(63, 4, '13', '2014-03-16'),
+(64, 4, '14', '2014-03-16'),
+(65, 4, '15', '2014-03-16'),
+(66, 4, '16', '2014-03-16'),
+(67, 4, '17', '2014-03-16'),
+(68, 4, '18', '2014-03-16'),
+(69, 4, '19', '2014-03-16');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`) VALUES
+(1, 'tyy8t', ''),
+(2, 'tyyt', ''),
+(4, 'user1', 'password1'),
+(5, 'user3', '1'),
+(6, 'user2', '2'),
+(7, 'user4', '4'),
+(8, 'user5', '5');
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
