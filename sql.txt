@@ -2,16 +2,16 @@
 -- version 4.1.6
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Время создания: Мар 16 2014 г., 14:00
--- Версия сервера: 5.6.16
--- Версия PHP: 5.5.9
+-- РҐРѕСЃС‚: 127.0.0.1
+-- Р’СЂРµРјСЏ СЃРѕР·РґР°РЅРёСЏ: РњР°СЂ 16 2014 Рі., 14:00
+-- Р’РµСЂСЃРёСЏ СЃРµСЂРІРµСЂР°: 5.6.16
+-- Р’РµСЂСЃРёСЏ PHP: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- База данных: `testnew`
+-- Р‘Р°Р·Р° РґР°РЅРЅС‹С…: `testnew`
 --
 CREATE DATABASE IF NOT EXISTS `testnew` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `testnew`;
@@ -19,7 +19,7 @@ USE `testnew`;
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `messages`
+-- РЎС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹ `messages`
 --
 
 CREATE TABLE IF NOT EXISTS `messages` (
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=73 ;
 
 --
--- Дамп данных таблицы `messages`
+-- Р”Р°РјРї РґР°РЅРЅС‹С… С‚Р°Р±Р»РёС†С‹ `messages`
 --
 
 INSERT INTO `messages` (`id`, `id_user`, `message`, `date`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `messages` (`id`, `id_user`, `message`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- РЎС‚СЂСѓРєС‚СѓСЂР° С‚Р°Р±Р»РёС†С‹ `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Дамп данных таблицы `users`
+-- Р”Р°РјРї РґР°РЅРЅС‹С… С‚Р°Р±Р»РёС†С‹ `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `password`) VALUES
@@ -84,11 +84,11 @@ INSERT INTO `users` (`id`, `name`, `password`) VALUES
 (8, 'user5', '5');
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- РћРіСЂР°РЅРёС‡РµРЅРёСЏ РІРЅРµС€РЅРµРіРѕ РєР»СЋС‡Р° СЃРѕС…СЂР°РЅРµРЅРЅС‹С… С‚Р°Р±Р»РёС†
 --
 
 --
--- Ограничения внешнего ключа таблицы `messages`
+-- РћРіСЂР°РЅРёС‡РµРЅРёСЏ РІРЅРµС€РЅРµРіРѕ РєР»СЋС‡Р° С‚Р°Р±Р»РёС†С‹ `messages`
 --
 ALTER TABLE `messages`
   ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
