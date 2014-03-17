@@ -4,7 +4,7 @@ $().ready(function() {
 		if (count_message > 0) {
 			for(var i = 1; i <= count_message; ++i) {
 				$('.message').last().remove();
-			}			
+			}
 		}
 	}
 	function add_message(name, message, date, message_id) {
@@ -40,7 +40,7 @@ $().ready(function() {
 			for(var i = 1; i <= current_page; ++i) {
 				$('.pagination-number').last().remove();
 			}
-		}	
+		}
 	}
 	function add_pagination(message_count) {
 		delete_pagination();
@@ -51,7 +51,7 @@ $().ready(function() {
 			$('.pagination-number').last().find('span').text(i);
 			$('.pagination-number').last().children().bind('click', function(e){
 				load_page(e);
-			});			
+			});
 		}
 	}
 	$('input[name="send-message"]').click(function(){
@@ -85,7 +85,12 @@ $().ready(function() {
 				if (data) {
 					var result = jQuery.parseJSON(data);
 					for(var i in result.rows.reverse()) {
-						add_message(result.rows[i].author, result.rows[i].message, result.rows[i].date, result.rows[i].message_id);
+						add_message(
+							result.rows[i].author, 
+							result.rows[i].message,
+							result.rows[i].date, 
+							result.rows[i].message_id
+						);
 					}
 					add_pagination(result.message_count);
 					$('.pagination-number').eq(p).find('a').css('background-color','grey');
@@ -136,7 +141,7 @@ $().ready(function() {
 							}
 						}
 					}
-				);				
+				);
 			});
 		});
 	}
